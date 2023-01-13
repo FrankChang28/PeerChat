@@ -94,7 +94,7 @@ let createPeerConnection = async(MemberId) =>{
     document.getElementById('user-1').classList.add('smallFrame')
 
     if(!localStream){
-        localStream = await navigator.mediaDevices.getUserMedia({video:true, audio:false})
+        localStream = await navigator.mediaDevices.getUserMedia({video:true, audio:true})
         document.getElementById('user-1').srcObject = localStream
     }
 
@@ -174,4 +174,5 @@ window.addEventListener('beforeunload', leaveChannel)//default
 
 document.getElementById('camera-btn').addEventListener('click', toggleCamera)
 document.getElementById('mic-btn').addEventListener('click', toggleMic)
+
 init()
